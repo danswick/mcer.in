@@ -1,0 +1,22 @@
+/*
+ * USER DEFINED SYTLES
+ */
+
+
+/* - - - - - HEADER - - - - - - */
+
+.site-nav li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+/* - - - - - LANDING - - - - - - */
+
+#work {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#work .columns {
+	
+}
