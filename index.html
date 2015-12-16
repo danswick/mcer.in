@@ -8,15 +8,17 @@ layout: default
 ============================
 -->
 
-    <div class="row" id="introduction">
+    <!-- <div class="navbar-spacer"></div> -->
+    <div class="row u-full-width" id="introduction">
       <div class="column">
         <div class="section-header">
-          <h2>Hi, I'm Erin</h2>
-          <p class="divider"></p>
+          <h2 class="u-center" class="u-center">Hi, I'm Erin</h2>
+          <p class="divider u-center"></p>
+          <img src='images/erin-square.jpg' class="u-max-full-width headshot u-center" alt="photo">
+          <h4 class="u-center">I work to make our communities' transportation more active.</h4>
         </div>
-        <img src='images/erin-sign-web.jpg' class="u-max-full-width" alt="photo">
-        
       </div>
+      <div class="column">{% include header.html %}</div>
     </div>
 
 <!-- 
@@ -24,13 +26,12 @@ layout: default
  About section 
 ============================
 -->
-
-    <div class="row" id="about">
+  <div class="container">
+    <div class="row section" id="about">
       <div class="column">
         <div class="section-header">
-          <h2>About</h2>
+          <h2 class="u-center">About</h2>
           <p class="divider"></p>
-          <p>I work to make our communities' transportation more active.</p>
         </div>
         <p>I am a public health advocate, policy analyst, campaign manager, and planner. I work to make our communities healthier and better connected through walking, biking, and public transportation.</p>
 
@@ -50,10 +51,10 @@ layout: default
 ============================
 -->
 
-    <div class="row" id="work">
+    <div class="row section" id="work">
       <div class="column">
         <div class="section-header">
-          <h2>Work</h2>
+          <h2 class="u-center">Work</h2>
           <p class="divider"></p>
           <p>Getting it done</p>
         </div>
@@ -83,10 +84,22 @@ layout: default
 ============================
 -->
 
-    <div class="row" id="contact">
+    <div class="row section" id="contact">
       <div class="column">
-        
+        <div class="section-header">
+          <h2 class="u-center">Contact</h2>
+          <p class="divider"></p>
+        </div> 
+      </div>
+      <div class="row">
+        <h4>Get a hold of me</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/erinmcmillan" alt="linkedin profile">LinkedIn</a></li>
+          <li><a href="mailto:mcmillan.erin+website@gmail.com" alt="email address">Email</a></li>
+          <li><a href="https://twitter.com/mc_erin" alt="twitter">Twitter</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
 </html>
