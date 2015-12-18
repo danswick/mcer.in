@@ -1,0 +1,112 @@
+---
+layout: project
+title: Projects
+---
+<style>
+#map {
+    position: fixed;
+    width:50%;
+    top: 0;
+    bottom: 0;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+</style>
+<div id='map'></div>
+<div id='features'>
+    {% for post in site.categories.projects %}
+	    {% if forloop.first %}
+	    <section id='{{post.projectId}}' class='active'>
+	        <h3>{{post.title}}</h3>
+	        <p>{{post.content}}</p>
+	    </section>
+		{% else %}
+	    <section id='{{post.projectId}}'>
+	        <h3>{{post.title}}</h3>
+	        <p>{{post.content}}</p>
+	    </section>		
+	    {% endif %}
+	{% endfor %}
+</div>
+
+<script type="text/javascript">
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+
+	var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/mapbox/satellite-hybrid-v8',
+	    center: [-87.71072958341097, 41.90657844552379],
+	    zoom: 18,
+	    bearing: 27,
+	    pitch: 45
+	});
+
+	var chapters = {
+		{% for post in site.categories.projects %}
+			{% if forloop.last %}
+		    {{post.projectId}}: {
+		        bearing: {{post.bearing}},
+		        center: [{{post.center}}],
+		        zoom: {{post.zoom}},
+		        pitch: {{post.pitch}}
+		    }
+		    {% else %}
+		    {{post.projectId}}: {
+		        bearing: {{post.bearing}},
+		        center: [{{post.center}}],
+		        zoom: {{post.zoom}},
+		        pitch: {{post.pitch}}
+		    },
+		    {% endif %}
+		{% endfor %}
+	}
+
+	// On every scroll event, check which element is on screen
+	window.onscroll = function() {
+	    var chapterNames = Object.keys(chapters);
+	    for (var i = 0; i < chapterNames.length; i++) {
+	        var chapterName = chapterNames[i];
+	        if (isElementOnScreen(chapterName)) {
+	            setActiveChapter(chapterName);
+	            break;
+	        }
+	    }
+	};
+
+	var activeChapterName = {% for post in site.categories.projects %}{% if forloop.first %}"{{post.projectId}}"{% endif %}{% endfor %};
+	function setActiveChapter(chapterName) {
+	    if (chapterName === activeChapterName) return;
+
+	    map.flyTo(chapters[chapterName]);
+
+	    document.getElementById(chapterName).setAttribute('class', 'active');
+	    document.getElementById(activeChapterName).setAttribute('class', '');
+
+	    activeChapterName = chapterName;
+	}
+
+	function isElementOnScreen(id) {
+	    var element = document.getElementById(id);
+	    var bounds = element.getBoundingClientRect();
+	    return bounds.top < window.innerHeight && bounds.bottom > 0;
+	}
+</script>
