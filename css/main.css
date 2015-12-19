@@ -3,25 +3,84 @@
  */
 
 
-/* - - - - - HEADER - - - - - - */
+/* Navbar and footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.navbar {
+	background-color: #5cbddb;
+	position: absolute;
+	box-shadow: 0px 2px 4px -2px;
+}
 
 .navbar-item {
 	list-style-type: none;
 	display: inline-block;
-	padding: 1em 1.5em;
-	font-size: 2em;
+	font-weight: 300;
 }
 
 .navbar-item a { text-decoration: none; }
-.navbar-item a:hover { }
+
+/* For devices larger than iPhone 4 */
+@media (min-width: 320px) {
+	.navbar {
+		height: 4em;
+		top: 0;
+		box-shadow: none;
+	}
+
+	.navbar-item {
+		padding: 1em 0.5em;
+		font-size: 1em;
+	}
+
+	.has-docked-nav .navbar {
+	    position: absolute;
+	    top: 0;
+	    left: auto;
+	    bottom: auto;
+	    z-index: 9999;
+	}
+}
+
+/* For devices larger than Phablet */
+@media (min-width: 550px) {
+	.navbar {
+		background-color: #5cbddb;
+		height: 5em;
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		box-shadow: 0px 2px 4px -2px;
+	}
+
+	.navbar-item {
+		padding: 1em 1.5em;
+		font-size: 1.5em;
+	}
+
+	.has-docked-nav .navbar {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    bottom: auto;
+	    z-index: 9999;
+	}
+}
 
 body { margin: 0; }
 
-.navbar {
+footer {
 	background-color: #5cbddb;
-	height: 7em;
+	color: #fff;
 	position: absolute;
-	bottom: 0;
+	padding: 0 5em;
+	margin: 2em 0 0 0;
+	border: none;
+}
+
+footer p {
+	line-height: 2.5em;
+	margin: 0;
 }
 
 /*.navbar-spacer { 
@@ -40,58 +99,93 @@ ul, li {
 
 .navbar * { text-align: center; }
 
-.has-docked-nav .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: auto;
-    z-index: 9999;
-}
-
 /*.has-docked-nav .navbar-spacer {
 	display: block;
 }*/
 
+footer { 
+	display: none; 
+	padding: 1.5em;
+}
+
 
 /* - - - - - LANDING - - - - - - */
 
-#introduction {
-	height: 100vh;
-	padding-top: 4em;
-}
-
+#introduction { height: 100vh; }
 #introduction .column { margin-left: 0; }
+img.headshot { border-radius: 50%; }
 
-#introduction h4 {
-	font-weight: 300;
-	width: 430px;
+/* For devices larger than iPhone 4 */
+@media (min-width: 320px) {
+	#introduction {
+		padding-top: 5em;
+		padding-bottom: 2em;
+	}	
+
+	#introduction h4 {
+		font-weight: 300;
+		width: 300px;
+		font-size: 1.2em;
+	}
+
+	img.headshot {
+		width: 250px;
+		border-radius: 50%;
+		margin: 1em auto;
+	}
 }
 
-#work {
-	text-align: center;
+/* For devices larger than Phablet */
+@media (min-width: 550px) {
+	#introduction {
+		padding-top: 2em;
+		padding-bottom: 7em;
+	}
+
+	#introduction h4 {
+		font-weight: 300;
+		width: 430px;
+	}
+
+	img.headshot {
+		width: 300px;
+		border-radius: 50%;
+		margin: 2em auto;
+	}
 }
 
-#work .columns {
-	
-}
-
-img.headshot {
-	width: 360px;
-	border-radius: 50%;
-	margin: 2em auto;
-}
-
-.section {
-	margin-top: 4em;
-}
+#work { text-align: center; }
+.section { margin-top: 4em; }
+.section-header { margin-bottom: 5em; }
 
 .section-header h2 {
 	text-align: center;
+	border-bottom: 1px dashed #d1d1d1;
+	padding: 0 0 0.75em 0;
 }
 
-#contact * {
-	text-align: center;
+#contact * { text-align: center; }
+
+.work-showcase img {
+	width: 75%;
 }
+
+.section-wrapper {
+	padding: 3em 0;
+}
+
+.odd-section {
+	background-color: #5cbddb;
+	color: #fff;
+}
+
+.odd-section .section-header h2 {
+	border-bottom: 1px dashed #eee;
+}
+
+
+/* - - - - - PROJECTS - - - - - - */
+
 
 
 
@@ -101,3 +195,13 @@ img.headshot {
 	display: block;
 	text-align: center;
 }
+
+.active { display: block; }
+
+
+
+
+/* For devices larger than iPhone 4 */
+@media (min-width: 320px) {}
+/* For devices larger than Phablet */
+@media (min-width: 550px) {}

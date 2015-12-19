@@ -49,7 +49,7 @@ section:last-child {
 </div>
 
 <script type="text/javascript">
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+	/*mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
 
 	var map = new mapboxgl.Map({
 	    container: 'map',
@@ -58,7 +58,7 @@ section:last-child {
 	    zoom: 18,
 	    bearing: 27,
 	    pitch: 45
-	});
+	});*/
 
 	var chapters = {
 		{% for post in site.categories.projects %}
@@ -96,10 +96,10 @@ section:last-child {
 	function setActiveChapter(chapterName) {
 	    if (chapterName === activeChapterName) return;
 
-	    map.flyTo(chapters[chapterName]);
+	    /*map.flyTo(chapters[chapterName]);*/
 
-	    document.getElementById(chapterName).setAttribute('class', 'active');
-	    document.getElementById(activeChapterName).setAttribute('class', '');
+	    $('#' + chapterName).addClass('active');
+	    $('#' + activeChapterName).removeClass('active');
 
 	    activeChapterName = chapterName;
 	}
@@ -109,4 +109,13 @@ section:last-child {
 	    var bounds = element.getBoundingClientRect();
 	    return bounds.top < window.innerHeight && bounds.bottom > 0;
 	}
+
+  function alternateSection() {
+  	var sections = $('#features section');
+  	for (i = 0; i < sections.length; i++){
+  		if (i%2 === 1) { $(sections[i]).addClass('odd-section'); }
+  	}
+  }
+
+  alternateSection();
 </script>

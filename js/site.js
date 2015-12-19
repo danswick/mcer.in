@@ -1,10 +1,11 @@
 $(document).ready(function() {
 
-	var $nav = $('.navbar'),
+	var $headerNav = $('.header.navbar'),
+		  $footerNav = $('footer');
 		  $body = $('body'),
 		  $window = $(window),
 		  $popoverLink = $('[data-popover]'),
-		  navOffsetTop = $nav.offset().top,
+		  navOffsetTop = $headerNav.offset().top,
 		  $document = $(document);
 
 	function init() {
@@ -15,23 +16,25 @@ $(document).ready(function() {
 
 	function resize() {
 	  $body.removeClass('has-docked-nav')
-	  navOffsetTop = $nav.offset().top
+	  navOffsetTop = $headerNav.offset().top
 	  onScroll()
 	}
 
 	function onScroll() {
 	  if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
 	    $body.addClass('has-docked-nav');
+	    $footerNav.addClass('active');
 	  }
 	  if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
 	    $body.removeClass('has-docked-nav');
+	    $footerNav.removeClass('active');
 	  }
 	}
 
   function smoothScroll(e) {
     e.preventDefault();
     $(document).off("scroll");
-    var navHeight = $('.navbar').height();
+    var navHeight = $('.header.navbar').height();
     var target = this.hash,
         menu = target;
     $target = $(target);
@@ -43,7 +46,19 @@ $(document).ready(function() {
     });
   }
 
+  function alternateSection() {
+  	var sections = $('.section-wrapper');
+  	for (i = 0; i < sections.length; i++){
+  		if (i%2 === 1) { $(sections[i]).addClass('odd-section'); }
+  	}
+  }
+
+alternateSection();
 
 init();
+
+var currentDate = new Date;
+
+$('footer p').append(', ' + currentDate.getFullYear());
 
 });

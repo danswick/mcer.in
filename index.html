@@ -11,14 +11,12 @@ layout: default
     <!-- <div class="navbar-spacer"></div> -->
     <div class="row u-full-width" id="introduction">
       <div class="column">
-        <div class="section-header">
           <h2 class="u-center" class="u-center">Hi, I'm Erin</h2>
           <p class="divider u-center"></p>
           <img src='images/erin-square.jpg' class="u-max-full-width headshot u-center" alt="photo">
           <h4 class="u-center">I work to make transportation more active in our communities.</h4>
-        </div>
       </div>
-      <div class="column">{% include header.html %}</div>
+      <div class="row">{% include header.html %}</div>
     </div>
 
 <!-- 
@@ -26,8 +24,8 @@ layout: default
  About section 
 ============================
 -->
-  <div class="container">
-    <div class="row section" id="about">
+  <div class="row section-wrapper" id="about">
+    <div class="container">
       <div class="column">
         <div class="section-header">
           <h2 class="u-center">About</h2>
@@ -44,6 +42,7 @@ layout: default
         <p>I'm also a founder and board member of Chicago Rarities Orchard Project (CROP), a non-profit organization founded to establish community rare-fruit orchards in Chicago. These orchards, designed for reclaimed spaces, are dedicated to preserving a few of the thousands of varieties of tree fruit that aren't commonly commercially grown, while providing open space and educational opportunities to Chicagoans.</p>
       </div>
     </div>
+  </div>
 
 <!-- 
 ============================
@@ -51,32 +50,36 @@ layout: default
 ============================
 -->
 
-    <div class="row section" id="work">
+  <div class="row section-wrapper" id="work">
+    <div class="container">
       <div class="column">
         <div class="section-header">
           <h2 class="u-center">Work</h2>
           <p class="divider"></p>
-          <p>Getting it done</p>
         </div>
-        <div class="row">
+        <div class="row work-showcase">
           <div class="four columns">
             <h4>Transportation policy</h4>
             <img src="{{site.baseulr}}/images/school-24.svg">
             <p>I'm a transportation maven!</p>
+            <p>I work to make transportation policy smarter, more strategic and better funded, whether through state-level policy, local advocacy, or coalition building.</p>
           </div>
           <div class="four columns">
             <h4>Public health</h4>
             <img src="{{site.baseulr}}/images/farm-24.svg">
             <p>Tortillas and salads for all!</p>
+            <p>I work to give our communities better options when it comes to transportation, nutrition, and school and community gardens.</p>
           </div>
           <div class="four columns">
             <h4>Technical assistance</h4>
             <img src="{{site.baseurl}}/images/rocket-24.svg">
             <p>Curricula and action plans fear me.</p>
+            <p>Safe routes to school planning, pedestrian safety assessments, policy analysis. Good transportation and pubic health decisions start with a solid analytical foundation.</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 <!-- 
 ============================
@@ -84,7 +87,8 @@ layout: default
 ============================
 -->
 
-    <div class="row section" id="contact">
+  <div class="row section-wrapper" id="contact">
+    <div class="container">
       <div class="column">
         <div class="section-header">
           <h2 class="u-center">Contact</h2>
@@ -101,8 +105,5 @@ layout: default
       </div>
     </div>
   </div>
-
-  <script src="{{site.baseurl}}/js/projects.js"></script>
-  <script>console.log(projectsGeoJson);</script>
 
   
