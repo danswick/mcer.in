@@ -49,16 +49,16 @@ section:last-child {
 </div>
 
 <script type="text/javascript">
-	/*mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
 
 	var map = new mapboxgl.Map({
 	    container: 'map',
-	    style: 'mapbox://styles/mapbox/satellite-hybrid-v8',
-	    center: [-87.71072958341097, 41.90657844552379],
-	    zoom: 18,
+	    style: 'mapbox://styles/mapbox/streets-v8',
+	    center: [-87.71054685115813, 41.90668078854993],
+	    zoom: 16.54,
 	    bearing: 27,
 	    pitch: 45
-	});*/
+	});
 
 	var chapters = {
 		{% for post in site.categories.projects %}
@@ -96,7 +96,7 @@ section:last-child {
 	function setActiveChapter(chapterName) {
 	    if (chapterName === activeChapterName) return;
 
-	    /*map.flyTo(chapters[chapterName]);*/
+	    map.flyTo(chapters[chapterName]);
 
 	    $('#' + chapterName).addClass('active');
 	    $('#' + activeChapterName).removeClass('active');

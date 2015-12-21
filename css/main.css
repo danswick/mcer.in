@@ -81,6 +81,8 @@ footer {
 footer p {
 	line-height: 2.5em;
 	margin: 0;
+	font-family: 'Alegreya Sans';
+	font-weight: 300;
 }
 
 /*.navbar-spacer { 
@@ -125,7 +127,7 @@ img.headshot { border-radius: 50%; }
 	#introduction h4 {
 		font-weight: 300;
 		width: 300px;
-		font-size: 1.2em;
+		font-size: 1.5em;
 	}
 
 	img.headshot {
@@ -138,13 +140,16 @@ img.headshot { border-radius: 50%; }
 /* For devices larger than Phablet */
 @media (min-width: 550px) {
 	#introduction {
-		padding-top: 2em;
-		padding-bottom: 7em;
+		padding-top: 0em;
+		padding-bottom: 5em;
 	}
+
+	#introduction h2 { margin-top: 4%; }
 
 	#introduction h4 {
 		font-weight: 300;
 		width: 430px;
+		font-size: 2em;
 	}
 
 	img.headshot {
@@ -166,8 +171,30 @@ img.headshot { border-radius: 50%; }
 
 #contact * { text-align: center; }
 
-.work-showcase img {
-	width: 75%;
+/* For devices larger than iPhone 4 */
+@media (min-width: 320px) {
+	.work-showcase img {
+		width: 50%;
+	}
+	.work-showcase img { display: block; margin: 0 auto; }
+	.work-showcase h4 { 
+		display: inline-block;
+		border-bottom: 1px solid #fff; 
+		margin-top: 2em;
+	}
+	.top-div h4 { margin-top: 0; }
+}
+/* For devices larger than Phablet */
+@media (min-width: 550px) {
+	.work-showcase img {
+		width: 75%;
+	}
+	.work-showcase img { display: block; margin: 0 auto; }
+	.work-showcase h4 { 
+		display: block;
+		border-bottom: none; 
+		margin-top: 0em;
+	}
 }
 
 .section-wrapper {

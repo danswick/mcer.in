@@ -39,7 +39,7 @@ $(document).ready(function() {
         menu = target;
     $target = $(target);
     $('html, body').stop().animate({
-        'scrollTop': $target.offset().top - (navHeight + 20)
+        'scrollTop': $target.offset().top - (navHeight)
     }, 0, 'swing', function () {
         window.location.hash = target;
         $(document).on("scroll", onScroll);
