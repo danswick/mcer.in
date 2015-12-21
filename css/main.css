@@ -170,6 +170,31 @@ img.headshot { border-radius: 50%; width: 30vh; margin: 10vh auto; }
 
 #contact * { text-align: center; }
 
+.project-map {
+	height: 20em;
+	background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    ), url("../images/map-image.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	max-width: 1600px;
+}
+
+.project-map h4 {
+	width: 30%;
+    padding: 0.5em;
+    border: solid 2px #fff;
+    border-radius: 3px;
+    margin: 4em auto 0 auto;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.1s;
+}
+.project-map h4:hover { background-color: rgba(255,255,255,0.3); }
+.project-map a { text-decoration: none; color: #fff; }
+
 /* For devices larger than iPhone 4 */
 @media (min-width: 320px) {
 	.work-showcase img {
