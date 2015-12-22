@@ -60,6 +60,8 @@ section:last-child {
 	    pitch: 45
 	});
 
+	map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+
 	var chapters = {
 		{% for post in site.categories.projects %}
 			{% if forloop.last %}

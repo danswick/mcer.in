@@ -2,6 +2,26 @@
  * USER DEFINED SYTLES
  */
 
+@font-face {
+  font-family: 'Stackicons-Social';
+  src: url("Stackicons-Social.eot");
+  /* IE9 Compat Modes */
+  src: url("Stackicons-Social.eot?#iefix") format("embedded-opentype"), url("Stackicons-Social.woff") format("woff"), url("Stackicons-Social.ttf") format("truetype");
+  /* Legacy iOS */
+  font-style: normal !important;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  speak: none;
+}
+
+.icon { font-family: "Stackicons-Social"; }
+.twitter::before { content: "\e036   "; color: #00bcf6; }
+.linkedin::before { content: "\e25f   "; color: #107eb8; }
+.email-icon::before { content: "\e04f   "; color: #bbb; }
+
+
 
 /* Navbar and footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -168,7 +188,14 @@ img.headshot { border-radius: 50%; width: 30vh; margin: 10vh auto; }
 	padding: 0 0 0.75em 0;
 }
 
-#contact * { text-align: center; }
+#contact * { text-align: center; text-decoration: none; }
+#contact li { 
+	width: 10%;
+	margin: 0 auto;
+	list-style: none; 
+	font-size: 3.5em; 
+	display: inline-block;
+}
 
 .project-map {
 	height: 20em;
@@ -237,7 +264,8 @@ img.headshot { border-radius: 50%; width: 30vh; margin: 10vh auto; }
 
 /* - - - - - PROJECTS - - - - - - */
 
-
+/*reset skeleton button styles to avoid clashes with mapbox gl js*/
+#map button { margin-bottom: 0; border-radius: 0;}
 
 
 /* - - - - - UTILITY - - - - - - */
