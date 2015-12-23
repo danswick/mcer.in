@@ -179,6 +179,7 @@ img.headshot { border-radius: 50%; width: 30vh; margin: 10vh auto; }
 }
 
 #work { text-align: center; }
+.work-showcase { margin-bottom: 4em; }
 .section { margin-top: 4em; }
 .section-header { margin-bottom: 5em; }
 
